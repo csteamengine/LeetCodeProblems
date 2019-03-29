@@ -22,10 +22,10 @@ public class Solution {
         int x = 0;
         int y = 0;
 
-        System.out.println("Curr Grid:");
-        for(int[] arr: grid){
-            System.out.println(Arrays.toString(arr));
-        }
+        int[][] left = new int[grid.length][grid[0].length];
+        int[][] right = new int[grid.length][grid[0].length];
+        int[][] up = new int[grid.length][grid[0].length];
+        int[][] down = new int[grid.length][grid[0].length];
 
         for(int i = 0; i< grid.length; i++){
             for(int j = 0; j<grid[0].length; j++){
@@ -34,83 +34,75 @@ public class Solution {
                     y = j;
                     grid[i][j] = -1;
                 }
+
+                left[i][j] = grid[i][j];
+                right[i][j] = grid[i][j];
+                up[i][j] = grid[i][j];
+                down[i][j] = grid[i][j];
             }
         }
 
 
         //left
-        if((x-1) >= 0 && grid[x-1][y] != -1){
-            System.out.println("Left");
-            if(grid[x-1][y] == 2){
-                if(checkGrid(grid)){
+        if((x-1) >= 0 && left[x-1][y] != -1){
+            if(left[x-1][y] == 2){
+                if(checkGrid(left)){
                     output++;
                 }
             }else{
-                int[][] tempGrid = grid;
-                tempGrid[x-1][y] = 1;
-                tempGrid[x][y] = -1;
-                output += uniquePathsIII(tempGrid);
+                left[x-1][y] = 1;
+                left[x][y] = -1;
+                output += uniquePathsIII(left);
             }
         }
 
 
         //right
-        if((x+1) < grid.length && grid[x+1][y] != -1){
-            System.out.println("Right");
-            if(grid[x+1][y] == 2){
-                if(checkGrid(grid)){
+        if((x+1) < right.length && right[x+1][y] != -1){
+            if(right[x+1][y] == 2){
+                if(checkGrid(right)){
                     output++;
                 }
             }else{
-                int[][] tempGrid = grid;
-                tempGrid[x+1][y] = 1;
-                tempGrid[x][y] = -1;
-                output += uniquePathsIII(tempGrid);
+                right[x+1][y] = 1;
+                right[x][y] = -1;
+                output += uniquePathsIII(right);
             }
         }
 
 
         //up
         if((y-1) >= 0 && grid[x][y-1] != -1){
-            System.out.println("Up");
             if(grid[x][y-1] == 2){
                 if(checkGrid(grid)){
                     output++;
                 }
             }else{
-                int[][] tempGrid = grid;
-                tempGrid[x][y-1] = 1;
-                tempGrid[x][y] = -1;
-                output += uniquePathsIII(tempGrid);
+                up[x][y-1] = 1;
+                up[x][y] = -1;
+                output += uniquePathsIII(up);
             }
         }
 
 
         //down
         if((y+1) < grid[0].length && grid[x][y+1] != -1){
-            System.out.println("Down");
             if(grid[x][y+1] == 2){
                 if(checkGrid(grid)){
                     output++;
                 }
             }else{
-                int[][] tempGrid = grid;
-                tempGrid[x][y+1] = 1;
-                tempGrid[x][y] = -1;
-                output += uniquePathsIII(tempGrid);
+                down[x][y+1] = 1;
+                down[x][y] = -1;
+                output += uniquePathsIII(down);
             }
         }
 
-        System.out.println("Output: " + output);
 
         return output;
     }
 
     public boolean checkGrid(int[][] grid){
-        System.out.println("Checking Grid:");
-        for(int[] arr: grid){
-            System.out.println(Arrays.toString(arr));
-        }
         for(int i = 0; i< grid.length; i++){
             for(int j = 0; j<grid[0].length; j++){
                 if(grid[i][j] == 0){
