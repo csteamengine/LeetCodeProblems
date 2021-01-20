@@ -86,29 +86,29 @@ public class Solution{
             return max;
         }
     }
-    @Test
-    void main() {
-        MyCalendarThree cal = new MyCalendarThree();
-        assertEquals(1, cal.book(24,40)); // returns 1
-        System.out.println("===========================");
-        assertEquals(1, cal.book(43,50)); // returns 1
-        System.out.println("===========================");
-        assertEquals(2, cal.book(27,43)); // returns 2
-        System.out.println("===========================");
-        assertEquals(2, cal.book(5,21)); // returns 3
-        System.out.println("===========================");
-        assertEquals(3, cal.book(30,40)); // returns 3
-        System.out.println("===========================");
-        assertEquals(3, cal.book(14,29)); // returns 3
-        System.out.println("===========================");
-        assertEquals(3, cal.book(3,19)); // returns 3
-        System.out.println("===========================");
-        assertEquals(3, cal.book(3,14)); // returns 3
-        System.out.println("===========================");
-        assertEquals(4, cal.book(25,39)); // returns 3
-        System.out.println("===========================");
-        assertEquals(4, cal.book(6,19)); // returns 3
-        System.out.println("===========================");
-
-    }
+//    @Test
+//    void main() {
+//        MyCalendarThree cal = new MyCalendarThree();
+//        assertEquals(1, cal.book(24,40)); // returns 1
+//        System.out.println("===========================");
+//        assertEquals(1, cal.book(43,50)); // returns 1
+//        System.out.println("===========================");
+//        assertEquals(2, cal.book(27,43)); // returns 2
+//        System.out.println("===========================");
+//        assertEquals(2, cal.book(5,21)); // returns 3
+//        System.out.println("===========================");
+//        assertEquals(3, cal.book(30,40)); // returns 3
+//        System.out.println("===========================");
+//        assertEquals(3, cal.book(14,29)); // returns 3
+//        System.out.println("===========================");
+//        assertEquals(3, cal.book(3,19)); // returns 3
+//        System.out.println("===========================");
+//        assertEquals(3, cal.book(3,14)); // returns 3
+//        System.out.println("===========================");
+//        assertEquals(4, cal.book(25,39)); // returns 3
+//        System.out.println("===========================");
+//        assertEquals(4, cal.book(6,19)); // returns 3
+//        System.out.println("===========================");
+//
+//    }
 }
