@@ -1,4 +1,4 @@
-package RotateArray;
+package Arrays.RotateArray;
 
 import org.junit.jupiter.api.Test;
 

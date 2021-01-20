@@ -1,4 +1,4 @@
-package RemoveDuplicatesFromSortedArray;
+package Arrays.RemoveDuplicatesFromSortedArray;
 
 import org.junit.jupiter.api.Test;
 

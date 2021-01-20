@@ -18,11 +18,11 @@ class TreeNode {
 public class Solution {
     int sum = 0;
     public TreeNode bstToGst(TreeNode root) {
-        if(root == null) return node;
-        bstToGst(root.right);
-        sum += root.val;
-        root.val = sum;
-        bstToGst(root.left);
+//        if(root == null) return node;
+//        bstToGst(root.right);
+//        sum += root.val;
+//        root.val = sum;
+//        bstToGst(root.left);
         return root;
     }
 

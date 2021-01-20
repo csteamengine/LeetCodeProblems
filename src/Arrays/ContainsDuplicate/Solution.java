@@ -1,4 +1,4 @@
-package ContainsDuplicate;
+package Arrays.ContainsDuplicate;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package BestTimeToBuyAndSell;
+package Arrays.BestTimeToBuyAndSell;
 
 import org.junit.jupiter.api.Test;
 

@@ -6,8 +6,8 @@ public class Solution {
     public int[][] diagonalSort(int[][] mat) {
         //TODO go accross the top row
         //go down left side
-        /
-        return new int[][];
+
+        return new int[0][0];
     }
 
     @Test
