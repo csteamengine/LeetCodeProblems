@@ -21,26 +21,23 @@ public class Solution {
       }
     }
     public int sumEvenGrandparent(TreeNode root) {
-        int sum = sumWithParent(root, 0);
-        return sum;
+        return sumEvenGrandparentExtended(root, null, null);
     }
 
-    public int sumWithParent(TreeNode root, int parent){
-        int leftsum = 0;
-        int rightsum = 0;
+    public int sumEvenGrandparentExtended(TreeNode root, TreeNode parent, TreeNode grandparent){
+
         int output = 0;
-
-        if(parent % 2 == 0){
-            if(root.left != null){
-                leftsum = sumWithParent(root.left, root.val);
-            }
-
-            if(root.right != null){
-                rightsum = sumWithParent(root.right, root.val);
-            }
+        if(root.left != null){
+            output += sumEvenGrandparentExtended(root.left, root, parent);
         }
 
-        output = leftsum + rightsum;
+        if(root.right != null){
+            output += sumEvenGrandparentExtended(root.right, root, parent);
+        }
+
+        if(grandparent != null && grandparent.val % 2 == 0){
+            output += root.val;
+        }
 
         return output;
     }
@@ -55,7 +52,7 @@ public class Solution {
         TreeNode one = new TreeNode(1);
         TreeNode three = new TreeNode(3);
         TreeNode nine = new TreeNode(9);
-        TreeNode onetwo = new TreeNode(1);
+        TreeNode one2 = new TreeNode(1);
         TreeNode four = new TreeNode(4);
         TreeNode five = new TreeNode(5);
         six.left = seven;
@@ -65,8 +62,8 @@ public class Solution {
         eight.left = one;
         eight.right = three;
         two.left = nine;
-        seven.left = onetwo;
-        seven.right = four;
+        seven2.left = one2;
+        seven2.right = four;
         three.right = five;
 
         assertEquals(18, sumEvenGrandparent(six));
