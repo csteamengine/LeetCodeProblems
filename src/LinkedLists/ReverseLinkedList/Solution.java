@@ -16,12 +16,13 @@ class ListNode {
 
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        if(head.next == null){
-            //we have reached the end.
+        if(head == null || head.next == null) return head; //The end
 
-        }
+        ListNode p = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
 
-        return head;
+        return p;
     }
 
 }
