@@ -51,14 +51,4 @@ class Solution {
         levelOrderHelper(node.left, list, depth + 1);
         levelOrderHelper(node.right, list, depth + 1);
     }
-
-    @Test
-    void testLevelOrder() {
-        TreeNode one = new TreeNode(1, null, null);
-        TreeNode three = new TreeNode(3, null, null);
-        TreeNode two = new TreeNode(2, one, three);
-
-        assertTrue(isValidBST(two));
-
-    }
 }

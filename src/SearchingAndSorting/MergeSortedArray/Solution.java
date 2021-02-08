@@ -1,4 +1,4 @@
-package SearchingAndSorting;
+package SearchingAndSorting.MergeSortedArray;
 
 import org.junit.jupiter.api.Test;
 

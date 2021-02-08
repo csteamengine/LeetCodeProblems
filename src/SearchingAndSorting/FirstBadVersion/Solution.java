@@ -1,28 +1,28 @@
-package SearchingAndSorting.MergeSortedArray;
+package SearchingAndSorting.FirstBadVersion;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int num1Index = m - 1;
-        int num2Index = n - 1;
-        int index = m + n - 1;
-        while(num1Index >= 0 && num2Index >= 0){
-            if(nums1[num1Index] >= nums2[num2Index]){
-                nums1[index] = nums1[num1Index];
-                num1Index--;
-            }else{
-                nums1[index] = nums2[num2Index];
-                num2Index--;
-            }
-            index--;
-        }
+    public boolean isBadVersion(int version){
+        boolean[] versions = {false, false, false, true, true};
+        return versions[version-1];
+    }
 
-        while(num2Index >= 0){
-            nums1[index--] = nums2[num2Index--];
+    public int firstBadVersion(int n) {
+        int left = 1;
+        int right = n;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (isBadVersion(mid)) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
         }
+        return left;
     }
 
     public void printArray(int[] array){
@@ -34,26 +34,8 @@ public class Solution {
     }
 
     @Test
-    void testArray1() {
-        int[] nums1 = {1,2,3,0,0,0};
-        int[] nums2 = {2, 5, 6};
-        int[] expected = {1, 2, 2, 3, 5, 6};
-
-        merge(nums1, 3, nums2, 3);
-
-        printArray(nums1);
-        assertArrayEquals(expected, nums1);
-    }
-
-    @Test
-    void testArray2() {
-        int[] nums1 = {2,0};
-        int[] nums2 = {1};
-        int[] expected = {1, 2};
-
-        merge(nums1, 1, nums2, 1);
-
-        printArray(nums1);
-        assertArrayEquals(expected, nums1);
+    void testVersions() {
+        int expected = 4;
+        assertEquals(expected, firstBadVersion(5));
     }
 }
