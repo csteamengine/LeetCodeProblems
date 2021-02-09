@@ -9,12 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Solution {
     public int getMaximumGold(int[][] grid) {
-        return recurseMaxGold(grid, 0);
+        return 0;
     }
 
     public int recurseMaxGold(int[][] grid, int startRow, int startCol){
-        //If curr block is 0 skip
-
+        return 0;
     }
 
     @Test
