@@ -27,7 +27,7 @@ public class Solution {
         int output = 0;
         int index = 0;
 
-        while(boxCount > 0){
+        while(boxCount > 0 && index < boxTypes.length){
             if(boxTypes[index][0] > 0){
                 output += boxTypes[index][1];
                 boxTypes[index][0]--;
